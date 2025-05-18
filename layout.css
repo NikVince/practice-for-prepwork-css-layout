@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif; /* Added a default font */
+}
+
+form {
+    width: auto; /* Let fieldset control the width */
+}
+
+fieldset {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    width: 400px; /* Approximate width from wireframe */
+    background-color: #f9f9f9; /* Light background for the fieldset */
+}
+
+legend {
+    padding: 0 10px; /* Padding around the legend text */
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10px; /* To align with fieldset padding */
+}
