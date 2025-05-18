@@ -1,26 +1,137 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align to top to see form if it's long */
     min-height: 100vh;
-    margin: 0;
-    font-family: sans-serif; /* Added a default font */
+    margin: 20px 0; /* Add some margin to top/bottom */
+    font-family: sans-serif;
+    background-color: #f0f0f0; /* Light grey background for the page */
 }
 
 form {
-    width: auto; /* Let fieldset control the width */
+    width: auto;
 }
 
 fieldset {
-    border: 1px solid #ccc; /* Light grey border */
-    padding: 20px;
-    width: 400px; /* Approximate width from wireframe */
-    background-color: #f9f9f9; /* Light background for the fieldset */
+    border: 1px solid #000; /* Black border for fieldset */
+    padding: 25px 20px 20px 20px; /* Top padding adjusted for legend */
+    width: 420px;
+    background-color: #fff; /* White background for the fieldset */
+    position: relative; /* For legend positioning */
 }
 
 legend {
-    padding: 0 10px; /* Padding around the legend text */
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-left: 10px; /* To align with fieldset padding */
+    padding: 0 5px;
+    font-size: 0.9em;
+    margin-left: 10px; /* Indent legend slightly */
+    border: 1px solid #000;
+    background-color: #fff;
+    position: absolute;
+    top: -10px; /* Pulls legend onto the top border */
+}
+
+/* General styling for form groups (divs directly under fieldset) */
+fieldset > div {
+    margin-bottom: 12px;
+}
+
+/* Remove bottom margin from the last group (submit button) */
+fieldset > div:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Styling for labels and the paragraph for radio buttons */
+label,
+fieldset > div > p { /* Target the <p> for "Choose your favorite..." */
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: normal; /* Wireframe labels are not bold */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #000; /* Black border for inputs */
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+/* For Status and Date row */
+.form-row {
+    display: flex;
+    gap: 15px; /* Space between Status and Date groups */
+}
+
+.form-group-inline {
+    flex: 1; /* Each group takes equal space */
+}
+
+/* For Radio buttons */
+.radio-options-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 4px; /* Align with other inputs */
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 4px;
+}
+
+.radio-option label {
+    display: inline-block; /* Keep label next to radio */
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+/* For Checkboxes */
+.checkbox-container {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    gap: 15px;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.checkbox-option input[type="checkbox"] {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.checkbox-option label {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+/* Submit button */
+.submit-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+button[type="submit"] {
+    padding: 8px 15px;
+    background-color: #e9e9e9;
+    border: 1px solid #000;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #dcdcdc;
 }
